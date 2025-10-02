@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme -->
+    <style name="Base.Theme.GPA_R02021117_Calculator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorPrimaryVariant">@color/dark_primary_variant</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/dark_secondary</item>
+        <item name="colorSecondaryVariant">@color/gray_7</item>
+        <item name="colorOnSecondary">@color/dark_on_secondary</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="colorSurface">@color/dark_surface</item>
+        <item name="colorOnBackground">@color/dark_on_background</item>
+        <item name="colorOnSurface">@color/dark_on_surface</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/dark_background</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/dark_on_secondary</item>
+        <item name="android:textColorSecondary">@color/dark_on_background</item>
+        <item name="android:textColorHint">@color/dark_primary</item>
+
+        <!-- Button style -->
+        <item name="buttonStyle">@style/Widget.App.Button.Dark</item>
+
+        <!-- EditText style -->
+        <item name="editTextStyle">@style/Widget.App.EditText.Dark</item>
+    </style>
+
+    <style name="Theme.GPA_R02021117_Calculator" parent="Base.Theme.GPA_R02021117_Calculator" />
+
+    <!-- Button Style for Dark Theme -->
+    <style name="Widget.App.Button.Dark" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/dark_primary</item>
+        <item name="android:textColor">@color/dark_on_primary</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- EditText Style for Dark Theme -->
+    <style name="Widget.App.EditText.Dark" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/dark_on_secondary</item>
+        <item name="android:textColor">@color/dark_on_background</item>
+        <item name="android:textColorHint">@color/gray_6</item>
+    </style>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GPA_r02021117_Calculator</string>
+    <string name="app_title">GPA Calculator</string>
+
+    <!-- Splash Screen -->
+    <string name="school_logo_desc">School Logo</string>
+
+    <!-- Course Input Screen -->
+    <string name="how_many_courses">How Many Courses?</string>
+    <string name="enter_number_courses">Enter the number of courses you\'re taking this semester</string>
+    <string name="number_of_courses_hint">e.g., 5</string>
+    <string name="continue_button">Continue</string>
+
+    <!-- Main Calculator Screen -->
+    <string name="course1_label">Course 1 Grade:</string>
+    <string name="course2_label">Course 2 Grade:</string>
+    <string name="course3_label">Course 3 Grade:</string>
+    <string name="course4_label">Course 4 Grade:</string>
+    <string name="course5_label">Course 5 Grade:</string>
+    <string name="grade_hint">Enter grade (0-100)</string>
+    <string name="compute_gpa">Compute GPA</string>
+    <string name="clear_form">Clear Form</string>
+    <string name="gpa_result">GPA: --</string>
+    <string name="toggle_theme">Toggle Theme</string>
+</resources>
