@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         const val THEME_LIGHT = "light"
         const val THEME_DARK = "dark"
     }
-
     private lateinit var course1: EditText
     private lateinit var course2: EditText
     private lateinit var course3: EditText
