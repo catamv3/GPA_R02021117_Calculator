@@ -8,20 +8,38 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background_color"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="26dp">
 
-        <!-- Title -->
-        <TextView
+        <!-- Title and Theme Toggle Row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:text="@string/app_title"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/app_title"
+                android:textColor="@color/primary_color"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/themeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dark_mode"
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
+
+        </LinearLayout>
 
         <!-- Course Inputs -->
         <EditText
@@ -38,7 +56,8 @@
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:textColor="#212529" />
+            android:textColor="@color/edittext_text_color"
+            android:textColorHint="@color/hint_color" />
 
 
         <EditText
@@ -55,7 +74,8 @@
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:textColor="#212529"/>
+            android:textColor="@color/edittext_text_color"
+            android:textColorHint="@color/hint_color" />
 
         <EditText
             android:id="@+id/course3"
@@ -71,7 +91,8 @@
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:textColor="#212529" />
+            android:textColor="@color/edittext_text_color"
+            android:textColorHint="@color/hint_color" />
 
         <EditText
             android:id="@+id/course4"
@@ -87,7 +108,8 @@
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:textColor="#212529" />
+            android:textColor="@color/edittext_text_color"
+            android:textColorHint="@color/hint_color" />
 
         <EditText
             android:id="@+id/course5"
@@ -103,7 +125,8 @@
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:padding="12dp"
-            android:textColor="#212529" />
+            android:textColor="@color/edittext_text_color"
+            android:textColorHint="@color/hint_color" />
 
         <!-- Compute Button -->
         <Button
@@ -126,7 +149,7 @@
             android:gravity="center"
             android:padding="16dp"
             android:text="@string/gpa_result"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             android:textStyle="bold" />
 

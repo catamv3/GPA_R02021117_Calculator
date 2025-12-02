@@ -1,5 +1,7 @@
 package com.example.gpa_r02021117_calculator
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +11,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -23,10 +27,26 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var displayGPA: TextView
 
+    private lateinit var themeSwitch: SwitchCompat
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     private var currentBackgroundColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize SharedPreferences
+        sharedPreferences = getSharedPreferences("theme_prefs", Context.MODE_PRIVATE)
+
+        // Load and apply saved theme before setting content view
+        val isDarkMode = sharedPreferences.getBoolean("dark_mode", false)
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -47,6 +67,25 @@ class MainActivity : AppCompatActivity() {
 
         //Initializing displaying grade
         displayGPA = findViewById(R.id.tvResult)
+
+        //Initialize theme switch
+        themeSwitch = findViewById(R.id.themeSwitch)
+
+        //Set the switch state to match the current theme
+        themeSwitch.isChecked = isDarkMode
+
+        //Set up theme switch listener
+        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            // Save theme preference
+            sharedPreferences.edit().putBoolean("dark_mode", isChecked).apply()
+
+            // Apply theme change
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         //Set background drawable for all EditText fields for focus highlighting
         setEditTextBackgrounds()

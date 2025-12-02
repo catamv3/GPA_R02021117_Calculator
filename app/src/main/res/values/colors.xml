@@ -43,7 +43,14 @@
     <color name="white">#F5F5F5</color>           <!-- Soft grey instead of pure white -->
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
-    <color name="edittext_bg">#E8E8E8</color>     <!-- Lighter grey for input fields -->
+
+    <!-- Light Theme Colors (will be overridden in values-night) -->
+    <color name="background_color">#F5F5F5</color>    <!-- Soft grey background -->
+    <color name="surface_color">#F5F5F5</color>       <!-- Soft grey surface -->
+    <color name="edittext_bg">#E8E8E8</color>         <!-- Lighter grey for input fields -->
+    <color name="text_color">#212529</color>          <!-- Dark text -->
+    <color name="hint_color">#9E9E9E</color>          <!-- Subtle grey for hints -->
+    <color name="primary_color">#6C757D</color>       <!-- Grey primary -->
 
     <!-- GPA Background Colors -->
     <color name="red_bg">#FFCDD2</color>       <!-- Light red for low GPA -->

@@ -8,19 +8,37 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/background_color"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title -->
-        <TextView
+        <!-- Title and Theme Toggle Row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_title"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="?attr/colorPrimary"
-            android:layout_marginBottom="12dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/app_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/primary_color" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/themeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dark_mode"
+                android:textColor="@color/text_color"
+                android:textSize="11sp" />
+
+        </LinearLayout>
 
         <!-- Grid Layout for Course Inputs -->
         <LinearLayout
@@ -47,7 +65,8 @@
                     android:hint="@string/course1_label"
                     android:inputType="numberDecimal"
                     android:autofillHints="username"
-                    android:textColor="#212529"
+                    android:textColor="@color/edittext_text_color"
+                    android:textColorHint="@color/hint_color"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true"
@@ -63,7 +82,8 @@
                     android:hint="@string/course2_label"
                     android:inputType="numberDecimal"
                     android:autofillHints="username"
-                    android:textColor="#212529"
+                    android:textColor="@color/edittext_text_color"
+                    android:textColorHint="@color/hint_color"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true"
@@ -79,7 +99,8 @@
                     android:hint="@string/course3_label"
                     android:inputType="numberDecimal"
                     android:autofillHints="username"
-                    android:textColor="#212529"
+                    android:textColor="@color/edittext_text_color"
+                    android:textColorHint="@color/hint_color"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true"
@@ -106,7 +127,8 @@
                     android:hint="@string/course4_label"
                     android:inputType="numberDecimal"
                     android:autofillHints="username"
-                    android:textColor="#212529"
+                    android:textColor="@color/edittext_text_color"
+                    android:textColorHint="@color/hint_color"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true"
@@ -122,7 +144,8 @@
                     android:hint="@string/course5_label"
                     android:inputType="numberDecimal"
                     android:autofillHints="username"
-                    android:textColor="#212529"
+                    android:textColor="@color/edittext_text_color"
+                    android:textColorHint="@color/hint_color"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:clickable="true"
@@ -153,7 +176,7 @@
             android:gravity="center"
             android:padding="12dp"
             android:text="@string/gpa_result"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/text_color"
             android:textSize="18sp"
             android:textStyle="bold" />
 
