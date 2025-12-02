@@ -51,6 +51,7 @@
     <color name="text_color">#212529</color>          <!-- Dark text -->
     <color name="hint_color">#9E9E9E</color>          <!-- Subtle grey for hints -->
     <color name="primary_color">#6C757D</color>       <!-- Grey primary -->
+    <color name="input_text_color">#000000</color>    <!-- Black text for user input -->
 
     <!-- GPA Background Colors -->
     <color name="red_bg">#FFCDD2</color>       <!-- Light red for low GPA -->

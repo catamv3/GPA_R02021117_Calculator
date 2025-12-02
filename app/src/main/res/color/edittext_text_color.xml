@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- All states - black text for user input in both light and dark modes -->
+    <item android:color="@color/input_text_color"/>
+</selector>

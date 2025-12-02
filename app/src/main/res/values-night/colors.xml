@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors -->
+    <color name="background_color">#2C2C2C</color>        <!-- Dark background -->
+    <color name="surface_color">#2C2C2C</color>           <!-- Dark surface -->
+    <color name="edittext_bg">#B0B0B0</color>             <!-- Soft grey for input (darker than light mode) -->
+    <color name="text_color">#E0E0E0</color>              <!-- Light text -->
+    <color name="hint_color">#000000</color>              <!-- Black hint text -->
+    <color name="primary_color">#ADB5BD</color>           <!-- Light grey primary -->
+    <color name="input_text_color">#000000</color>        <!-- Black text for user input -->
+</resources>
