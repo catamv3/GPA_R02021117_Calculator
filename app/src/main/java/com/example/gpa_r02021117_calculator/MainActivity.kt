@@ -48,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         //Initializing displaying grade
         displayGPA = findViewById(R.id.tvResult)
 
+        //Set background drawable for all EditText fields for focus highlighting
+        setEditTextBackgrounds()
+
         //restore saved state if it exists
         if (savedInstanceState != null) {
             classGradeOne.setText(savedInstanceState.getString("grade1", ""))
@@ -59,10 +62,12 @@ class MainActivity : AppCompatActivity() {
             computeButton.setText(savedInstanceState.getString("buttonText", getString(R.string.compute_gpa)))
 
             currentBackgroundColor = savedInstanceState.getInt("backgroundColor", resources.getColor(R.color.white))
-            findViewById<View>(R.id.main).setBackgroundColor(currentBackgroundColor)
         } else {
             currentBackgroundColor = resources.getColor(R.color.white)
         }
+
+        //Apply background color (must be done after view inflation)
+        findViewById<View>(R.id.main).setBackgroundColor(currentBackgroundColor)
 
         //setup TextWatchers on all grade fields
         setupTextWatchers()
@@ -162,12 +167,8 @@ class MainActivity : AppCompatActivity() {
         classGradeFive.text.clear()
         displayGPA.text = getString(R.string.gpa_result)
 
-        //resetting EditText borders to normal
-        classGradeOne.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeTwo.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeThree.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeFour.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeFive.setBackgroundResource(android.R.drawable.edit_text)
+        //resetting EditText backgrounds to normal selector
+        setEditTextBackgrounds()
 
         //changing the button text to "Compute GPA"
         computeButton.setText(R.string.compute_gpa)
@@ -181,11 +182,7 @@ class MainActivity : AppCompatActivity() {
      * clears any red highlightings in the textfields if there are any present
      */
     fun clearRedTextFields() {
-        classGradeOne.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeTwo.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeThree.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeFour.setBackgroundResource(android.R.drawable.edit_text)
-        classGradeFive.setBackgroundResource(android.R.drawable.edit_text)
+        setEditTextBackgrounds()
     }
 
     /**
@@ -216,25 +213,55 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Validates that all provided EditText fields are not empty.
-     * If any field is empty, it sets an error message on that field.
+     * Sets the background drawable for all EditText fields to enable focus highlighting
+     */
+    private fun setEditTextBackgrounds() {
+        classGradeOne.setBackgroundResource(R.drawable.edittext_selector)
+        classGradeTwo.setBackgroundResource(R.drawable.edittext_selector)
+        classGradeThree.setBackgroundResource(R.drawable.edittext_selector)
+        classGradeFour.setBackgroundResource(R.drawable.edittext_selector)
+        classGradeFive.setBackgroundResource(R.drawable.edittext_selector)
+    }
+
+    /**
+     * Validates that all provided EditText fields contain valid numeric grades between 0-100.
+     * If any field is empty or invalid, it sets an error message on that field.
      *
      * @param fields Vararg parameter of EditText fields to validate.
-     * @return True if all fields are filled, false if any field is empty.
+     * @return True if all fields are filled with valid grades, false otherwise.
      */
     fun validateGrade(vararg fields: EditText): Boolean {
+        var isValid = true
+
         for(field in fields) {
-            if(field.text.toString().isBlank()) {
+            val text = field.text.toString().trim()
+
+            if(text.isBlank()) {
                 //highlights the empty field red and sets an error message
                 field.setBackgroundColor(resources.getColor(android.R.color.holo_red_light))
                 field.error = "${field.hint ?: "This field"} is required"
-                return false
-            }
-            else {
-                //removes any red highlighting if the user has filled in the field
-                field.setBackgroundResource(android.R.drawable.edit_text)
+                isValid = false
+            } else {
+                try {
+                    val grade = text.toDouble()
+
+                    if (grade < 0 || grade > 100) {
+                        //highlights the field red if grade is out of range
+                        field.setBackgroundColor(resources.getColor(android.R.color.holo_red_light))
+                        field.error = "Grade must be between 0 and 100"
+                        isValid = false
+                    } else {
+                        //removes any red highlighting if the field is valid
+                        field.setBackgroundResource(R.drawable.edittext_selector)
+                    }
+                } catch (e: NumberFormatException) {
+                    //highlights the field red if input is not a valid number
+                    field.setBackgroundColor(resources.getColor(android.R.color.holo_red_light))
+                    field.error = "Please enter a valid number"
+                    isValid = false
+                }
             }
         }
-        return true
+        return isValid
     }
 }
