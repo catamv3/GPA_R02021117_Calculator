@@ -8,20 +8,20 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="26dp">
 
         <!-- Title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_title"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
             android:gravity="center"
+            android:text="@string/app_title"
             android:textColor="?attr/colorPrimary"
-            android:layout_marginBottom="24dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <!-- Course Inputs -->
         <EditText
@@ -29,17 +29,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/edittext_selector"
-            android:hint="@string/course1_label"
-            android:inputType="numberDecimal"
             android:autofillHints="username"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textColorHint="?android:attr/textColorHint"
+            android:background="@drawable/edittext_selector"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
+            android:hint="@string/course1_label"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:textColor="#212529" />
 
 
         <EditText
@@ -47,68 +46,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/edittext_selector"
-            android:hint="@string/course2_label"
-            android:inputType="numberDecimal"
             android:autofillHints="username"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textColorHint="?android:attr/textColorHint"
+            android:background="@drawable/edittext_selector"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
+            android:hint="@string/course2_label"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:textColor="#212529"/>
 
         <EditText
             android:id="@+id/course3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/edittext_selector"
-            android:hint="@string/course3_label"
-            android:inputType="numberDecimal"
             android:autofillHints="username"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textColorHint="?android:attr/textColorHint"
+            android:background="@drawable/edittext_selector"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
+            android:hint="@string/course3_label"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:textColor="#212529" />
 
         <EditText
             android:id="@+id/course4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/edittext_selector"
-            android:hint="@string/course4_label"
-            android:inputType="numberDecimal"
             android:autofillHints="username"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textColorHint="?android:attr/textColorHint"
+            android:background="@drawable/edittext_selector"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
+            android:hint="@string/course4_label"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:textColor="#212529" />
 
         <EditText
             android:id="@+id/course5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="@drawable/edittext_selector"
-            android:hint="@string/course5_label"
-            android:inputType="numberDecimal"
             android:autofillHints="username"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textColorHint="?android:attr/textColorHint"
+            android:background="@drawable/edittext_selector"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
+            android:hint="@string/course5_label"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
             android:padding="12dp"
-            android:minHeight="48dp" />
+            android:textColor="#212529" />
 
         <!-- Compute Button -->
         <Button
@@ -118,9 +113,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:backgroundTint="?attr/colorPrimary"
+            android:padding="12dp"
             android:text="@string/compute_gpa"
-            android:textColor="?attr/colorOnPrimary"
-            android:padding="12dp" />
+            android:textColor="?attr/colorOnPrimary" />
 
         <!-- GPA Result -->
         <TextView

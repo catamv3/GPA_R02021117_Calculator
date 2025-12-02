@@ -18,7 +18,7 @@
     <color name="light_secondary">#ADB5BD</color>         <!-- gray_5 -->
     <color name="light_background">#F8F9FA</color>        <!-- gray_1 -->
     <color name="light_surface">#FFFFFF</color>           <!-- White -->
-    <color name="light_on_primary">#FFFFFF</color>        <!-- White text on primary -->
+    <color name="light_on_primary">#212529</color>        <!-- White text on primary -->
     <color name="light_on_secondary">#212529</color>      <!-- gray_9 text on secondary -->
     <color name="light_on_background">#212529</color>     <!-- gray_9 -->
     <color name="light_on_surface">#212529</color>        <!-- gray_9 -->
@@ -40,9 +40,10 @@
     <color name="error_red">#DC3545</color>
 
     <!-- Utility -->
-    <color name="white">#FFFFFF</color>
+    <color name="white">#F5F5F5</color>           <!-- Soft grey instead of pure white -->
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+    <color name="edittext_bg">#E8E8E8</color>     <!-- Lighter grey for input fields -->
 
     <!-- GPA Background Colors -->
     <color name="red_bg">#FFCDD2</color>       <!-- Light red for low GPA -->
