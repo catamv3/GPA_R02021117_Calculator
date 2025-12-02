@@ -43,4 +43,9 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="transparent">#00000000</color>
+
+    <!-- GPA Background Colors -->
+    <color name="red_bg">#FFCDD2</color>       <!-- Light red for low GPA -->
+    <color name="yellow_bg">#FFF9C4</color>     <!-- Light yellow for medium GPA -->
+    <color name="green_bg">#C8E6C9</color>      <!-- Light green for high GPA -->
 </resources>

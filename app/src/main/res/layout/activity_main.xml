@@ -6,6 +6,7 @@
     android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -135,17 +136,6 @@
             android:textColor="?attr/colorPrimary"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <!-- Theme Toggle Button -->
-        <Button
-            android:id="@+id/btnToggleTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="?attr/colorPrimary"
-            android:text="@string/toggle_theme"
-            android:textColor="?attr/colorOnPrimary" />
 
     </LinearLayout>
 </ScrollView>
